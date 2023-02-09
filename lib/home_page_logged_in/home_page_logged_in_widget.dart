@@ -150,7 +150,6 @@ class _HomePageLoggedInWidgetState extends State<HomePageLoggedInWidget> {
                       Expanded(
                         child: TextFormField(
                           controller: textController,
-                          autofocus: true,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Search People, Human, Female',
