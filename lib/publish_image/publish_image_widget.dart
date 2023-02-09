@@ -195,7 +195,7 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBtnTextlight,
+                                        .primaryBackground,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
@@ -203,7 +203,7 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .bodyText1Family,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
+                                            .secondaryColor,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
                                                 FlutterFlowTheme.of(context)
