@@ -197,7 +197,18 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .primaryBtnTextlight,
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyText1Family,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1Family),
+                                      ),
                                   validator: (val) {
                                     if (val == null || val.isEmpty) {
                                       return 'Field is required';
@@ -274,7 +285,18 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyText1Family,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1Family),
+                                      ),
                                   validator: (val) {
                                     if (val == null || val.isEmpty) {
                                       return 'Field is required';
