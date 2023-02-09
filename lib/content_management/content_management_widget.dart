@@ -270,25 +270,38 @@ class _ContentManagementWidgetState extends State<ContentManagementWidget> {
                               itemBuilder: (context, gridViewIndex) {
                                 final gridViewImageRecord =
                                     gridViewImageRecordList[gridViewIndex];
-                                return Material(
-                                  color: Colors.transparent,
-                                  elevation: 2,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Container(
-                                    width: 100,
-                                    height: 155.7,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: Image.network(
-                                          gridViewImageRecord.imagePath!,
-                                        ).image,
-                                      ),
+                                return InkWell(
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'PublishImage',
+                                      queryParams: {
+                                        'imageDraftRef': serializeParam(
+                                          gridViewImageRecord.reference,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                    );
+                                  },
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 2,
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Container(
+                                      width: 100,
+                                      height: 155.7,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: Image.network(
+                                            gridViewImageRecord.imagePath!,
+                                          ).image,
+                                        ),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
                                     ),
                                   ),
                                 );
