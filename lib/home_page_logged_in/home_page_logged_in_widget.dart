@@ -327,7 +327,7 @@ class _HomePageLoggedInWidgetState extends State<HomePageLoggedInWidget> {
                           List<ImageRecord> staggeredViewImageRecordList =
                               snapshot.data!;
                           return MasonryGridView.count(
-                            crossAxisCount: 2,
+                            crossAxisCount: 3,
                             crossAxisSpacing: 10,
                             mainAxisSpacing: 10,
                             itemCount: staggeredViewImageRecordList.length,
@@ -336,11 +336,24 @@ class _HomePageLoggedInWidgetState extends State<HomePageLoggedInWidget> {
                               final staggeredViewImageRecord =
                                   staggeredViewImageRecordList[
                                       staggeredViewIndex];
-                              return ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: Image.network(
-                                  staggeredViewImageRecord.imagePath!,
-                                  fit: BoxFit.cover,
+                              return InkWell(
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'FullScreenImagePage',
+                                    queryParams: {
+                                      'imageRefrence': serializeParam(
+                                        staggeredViewImageRecord.reference,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(30),
+                                  child: Image.network(
+                                    staggeredViewImageRecord.imagePath!,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               );
                             },

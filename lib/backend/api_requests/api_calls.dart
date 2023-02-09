@@ -38,6 +38,8 @@ class CreatePaymentOrderCall {
         'x-api-version': '2022-09-01',
         'x-client-id': '19061216a1fe6b37a4fab8110d216091',
         'x-client-secret': 'c2d308ad20ca5edbb962d8d17d186f3a7b5cd43b',
+        'Authorization':
+            'Basic cnpwX3Rlc3RfZVBrOG5ZVDVmWUhHWm86QXBLOXowNUZMVWd0UGNBZHhTNjdBWnlv',
       },
       params: {},
       body: body,
@@ -157,6 +159,39 @@ class CheckOrderStatusCall {
         response,
         r'''$.payment_session_id''',
       );
+}
+
+class RazorPayCall {
+  static Future<ApiCallResponse> call() {
+    final body = '''
+{
+  "name": "jjjj Kumar",
+  "email": "jjjjjjjj@example.com",
+  "contact": "67676788",
+  "fail_existing": "1",
+  "gstin": "12ABCDE2356F7GH",
+  "notes": {
+    "notes_key_1": "Tea, Earl Grey, Hot",
+    "notes_key_2": "Tea, Earl Grey… decaf."
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Razor Pay',
+      apiUrl: 'https://api.razorpay.com/v1/customers',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization':
+            'Basic cnpwX3Rlc3RfZVBrOG5ZVDVmWUhHWm86QXBLOXowNUZMVWd0UGNBZHhTNjdBWnlv',
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
 }
 
 class ApiPagingParams {

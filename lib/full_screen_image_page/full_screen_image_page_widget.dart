@@ -152,29 +152,6 @@ class _FullScreenImagePageWidgetState extends State<FullScreenImagePageWidget> {
                                                     .bodyText1Family),
                                       ),
                                 ),
-                                Card(
-                                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                                  color: Color(0xFFCE4000),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 10, 10, 10),
-                                    child: Text(
-                                      'Follow',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyText1Family,
-                                            color: Colors.white,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1Family),
-                                          ),
-                                    ),
-                                  ),
-                                ),
                               ],
                             );
                           },

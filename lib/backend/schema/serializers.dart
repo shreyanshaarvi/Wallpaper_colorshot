@@ -4,6 +4,7 @@ import 'package:from_css_color/from_css_color.dart';
 import 'user_record.dart';
 import 'image_record.dart';
 import 'category_record.dart';
+import 'category_list_record.dart';
 
 import 'index.dart';
 
@@ -17,6 +18,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   UserRecord,
   ImageRecord,
   CategoryRecord,
+  CategoryListRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

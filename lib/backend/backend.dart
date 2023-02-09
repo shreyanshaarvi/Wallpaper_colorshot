@@ -8,6 +8,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/user_record.dart';
 import 'schema/image_record.dart';
 import 'schema/category_record.dart';
+import 'schema/category_list_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -18,6 +19,7 @@ export 'schema/serializers.dart';
 export 'schema/user_record.dart';
 export 'schema/image_record.dart';
 export 'schema/category_record.dart';
+export 'schema/category_list_record.dart';
 
 /// Functions to query UserRecords (as a Stream and as a Future).
 Future<int> queryUserRecordCount({
@@ -169,6 +171,58 @@ Future<FFFirestorePage<CategoryRecord>> queryCategoryRecordPage({
     queryCollectionPage(
       CategoryRecord.collection,
       CategoryRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query CategoryListRecords (as a Stream and as a Future).
+Future<int> queryCategoryListRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CategoryListRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CategoryListRecord>> queryCategoryListRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CategoryListRecord.collection,
+      CategoryListRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CategoryListRecord>> queryCategoryListRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CategoryListRecord.collection,
+      CategoryListRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<CategoryListRecord>> queryCategoryListRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+    queryCollectionPage(
+      CategoryListRecord.collection,
+      CategoryListRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

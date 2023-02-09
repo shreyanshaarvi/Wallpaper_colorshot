@@ -1,6 +1,7 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/upload_media.dart';
@@ -107,7 +108,22 @@ class _ContentManagementWidgetState extends State<ContentManagementWidget> {
                     .containsKey(FlutterFlowTheme.of(context).bodyText1Family),
               ),
         ),
-        actions: [],
+        actions: [
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.category,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30,
+            ),
+            onPressed: () async {
+              context.pushNamed('Category');
+            },
+          ),
+        ],
         centerTitle: false,
         elevation: 0,
       ),
@@ -273,24 +289,6 @@ class _ContentManagementWidgetState extends State<ContentManagementWidget> {
                                         ).image,
                                       ),
                                       borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0, 0.75),
-                                      child: InkWell(
-                                        onTap: () async {
-                                          final imageUpdateData =
-                                              createImageRecordData(
-                                            isPublished: true,
-                                          );
-                                          await gridViewImageRecord.reference
-                                              .update(imageUpdateData);
-                                        },
-                                        child: Icon(
-                                          Icons.check_box,
-                                          color: Colors.black,
-                                          size: 24,
-                                        ),
-                                      ),
                                     ),
                                   ),
                                 );

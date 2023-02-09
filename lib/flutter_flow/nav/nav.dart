@@ -151,6 +151,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ContentManagement',
               path: 'contentManagement',
               builder: (context, params) => ContentManagementWidget(),
+            ),
+            FFRoute(
+              name: 'PublishImage',
+              path: 'publishImage',
+              builder: (context, params) => PublishImageWidget(
+                imageDraftRef: params.getParam('imageDraftRef',
+                    ParamType.DocumentReference, false, ['image']),
+              ),
+            ),
+            FFRoute(
+              name: 'Category',
+              path: 'category',
+              builder: (context, params) => CategoryWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

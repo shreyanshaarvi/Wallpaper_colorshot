@@ -7,9 +7,13 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(CategoryListRecord.serializer)
       ..add(CategoryRecord.serializer)
       ..add(ImageRecord.serializer)
       ..add(UserRecord.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>()))

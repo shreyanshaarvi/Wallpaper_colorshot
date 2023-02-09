@@ -16,3 +16,5 @@ export 'phone_auth/phone_auth_widget.dart' show PhoneAuthWidget;
 export 'artsit_profie/artsit_profie_widget.dart' show ArtsitProfieWidget;
 export 'content_management/content_management_widget.dart'
     show ContentManagementWidget;
+export 'publish_image/publish_image_widget.dart' show PublishImageWidget;
+export 'category/category_widget.dart' show CategoryWidget;
