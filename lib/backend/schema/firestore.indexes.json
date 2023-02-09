@@ -9,6 +9,10 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "is_published",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "imageUplaodDate",
           "order": "DESCENDING"
         }

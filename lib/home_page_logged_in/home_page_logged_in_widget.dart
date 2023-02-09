@@ -221,6 +221,7 @@ class _HomePageLoggedInWidgetState extends State<HomePageLoggedInWidget> {
                     future: queryImageRecordOnce(
                       queryBuilder: (imageRecord) => imageRecord
                           .where('is_featured', isEqualTo: true)
+                          .where('is_published', isEqualTo: true)
                           .orderBy('imageUplaodDate', descending: true),
                       limit: 5,
                     ),
@@ -308,7 +309,10 @@ class _HomePageLoggedInWidgetState extends State<HomePageLoggedInWidget> {
                     clipBehavior: Clip.none,
                     children: [
                       StreamBuilder<List<ImageRecord>>(
-                        stream: queryImageRecord(),
+                        stream: queryImageRecord(
+                          queryBuilder: (imageRecord) => imageRecord
+                              .where('is_published', isEqualTo: true),
+                        ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
