@@ -394,7 +394,7 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                               onPressed: () async {
                                 final imageUpdateData = createImageRecordData(
                                   imageName: nameImgController!.text,
-                                  imageCategory: '',
+                                  imageCategory: dropDownValue,
                                   imagedescription:
                                       publishImageImageRecord.imagedescription,
                                   imageUplaodDate: getCurrentTimestamp,
