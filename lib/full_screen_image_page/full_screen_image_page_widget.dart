@@ -58,7 +58,7 @@ class _FullScreenImagePageWidgetState extends State<FullScreenImagePageWidget> {
             child: Stack(
               children: [
                 Image.network(
-                  'https://picsum.photos/seed/107/600',
+                  fullScreenImagePageImageRecord.imagePath!,
                   width: double.infinity,
                   height: double.infinity,
                   fit: BoxFit.cover,
