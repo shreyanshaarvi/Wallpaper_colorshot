@@ -105,8 +105,8 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                   borderRadius: BorderRadius.circular(0),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(
-                      sigmaX: 2,
-                      sigmaY: 2,
+                      sigmaX: 7,
+                      sigmaY: 7,
                     ),
                     child: SingleChildScrollView(
                       child: Column(
@@ -118,7 +118,7 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Image.network(
-                                'https://picsum.photos/seed/972/600',
+                                publishImageImageRecord.imagePath!,
                                 width: 332.4,
                                 height: 310.4,
                                 fit: BoxFit.cover,
@@ -196,6 +196,9 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                                         ),
                                         borderRadius: BorderRadius.circular(20),
                                       ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryBtnTextlight,
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -273,6 +276,9 @@ class _PublishImageWidgetState extends State<PublishImageWidget> {
                                         ),
                                         borderRadius: BorderRadius.circular(20),
                                       ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
